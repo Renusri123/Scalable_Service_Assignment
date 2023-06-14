@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request
 from pymongo import MongoClient
 
 app = Flask(__name__)
-client = MongoClient('mongodb://mongodb:27017/')
+client = MongoClient('dummy')
 db = client['food_db']
 collection = db['food_collection']
 
@@ -14,7 +14,7 @@ def health_check():
 
 @app.route('/foods', methods=['GET'])
 def get_foods():
-    foods = collection.find({}, {'_id': 0})
+    foods = list(collection.find({}, {'_id': 0}))
     return jsonify(foods)
 
 
@@ -26,5 +26,5 @@ def add_foods():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', debug=True)
 
