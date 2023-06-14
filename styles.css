@@ -1,10 +1,14 @@
 body {
-    font-family: Arial, sans-serif;
-  }
+  font-family: Arial, sans-serif;
+  background-color: #e6e6ff;
+}
+
+h1 {
+  color: #333;
+}
   
-  h1 {
-    color: #333;
-  }
+.image_desginer{
+  width: 200Px;
+}
   
-  /* Add more CSS styles as needed */
-  
+/* Add more CSS styles as needed */
